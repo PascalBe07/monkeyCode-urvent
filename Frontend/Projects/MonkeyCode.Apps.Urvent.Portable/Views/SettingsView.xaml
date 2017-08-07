@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MonkeyCode.Apps.Urvent.Portable.Views.SettingsView"
+             Title="{Binding Path=Title}">
+  <ContentPage.Content>
+    <StackLayout>
+      <StackLayout>
+        <Label Text="Debug" HorizontalOptions="Center" FontSize="20"></Label>
+        <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
+          <Label Text="Latitude: "></Label>
+          <Entry Text="{Binding Path=Latitude}" Keyboard="Numeric" HorizontalOptions="FillAndExpand"></Entry>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
+          <Label Text="Longitude: "></Label>
+          <Entry Text="{Binding Path=Longitude}" Keyboard="Numeric" HorizontalOptions="FillAndExpand"></Entry>
+        </StackLayout>
+      </StackLayout>
+      <Label Text="{Binding Path=MaxDistance, StringFormat='Max. distance: {0:N} km'}"></Label>
+      <Slider Minimum="0" Maximum="100" Value="{Binding Path=MaxDistance}"></Slider>
+      <Label Text="Date range:"></Label>
+      <Picker SelectedIndex="{Binding Path=EventDateRange}" >
+        <Picker.Items>
+          <x:String>Today</x:String>
+          <x:String>Week</x:String>
+          <x:String>Weekend</x:String>
+          <x:String>All</x:String>
+        </Picker.Items>
+      </Picker>
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

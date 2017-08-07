@@ -1,0 +1,11 @@
+﻿1. Install MySql Server
+	- Add User with Username: UrventAdmin Password:Urvent.2016
+	- User can be configured in URVent.PublicAPI/__conf.js
+
+2. Install GraphicsMagick (for Thumbnails) http://www.graphicsmagick.org/
+
+3. Install recent version of Nodejs
+
+4. Copy Full Urvent.PublicAPI Directory to server
+
+5. Run "node <URVent.PublicAPI_Path>/bin/www"

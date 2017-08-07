@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MonkeyCode.Apps.Urvent.Portable.Views.MyEventsView" x:Name="ViewObject" Title="{Binding Path=Title}">
+  <ListView ItemsSource="{Binding Path=Events}" RowHeight="80" x:Name="root">
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <!--<ImageCell Text="{Binding Path=Event.Name}" Detail="{Binding Path=Event.StartDateTime}" ImageSource="{Binding Path=Cover}"
+                   Command="{Binding Path=BindingContext.OpenEvent, Source={x:Reference Name=ViewObject}}" CommandParameter="{Binding}"></ImageCell>-->
+      <ViewCell>
+        <RelativeLayout>     
+          <Image IsVisible="{Binding Path=ImageLoaded}" Source="{Binding Path=Cover}" IsOpaque="True" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Opacity=".15" Scale="5"
+                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                  RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}">
+          </Image>
+          <Grid>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="2*"></ColumnDefinition>
+              <ColumnDefinition Width="8*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+          
+            <Image Grid.Column="0" IsVisible="{Binding Path=ImageLoaded}" Source="{Binding Path=Cover}" WidthRequest="80" Aspect="AspectFill" HeightRequest="80"  />
+            <ActivityIndicator Grid.Column="0" IsVisible="{Binding Path=IsBusy}" IsRunning="True" IsEnabled="True" HorizontalOptions="StartAndExpand"></ActivityIndicator>
+            <StackLayout Grid.Column="1" Orientation="Vertical">
+              <Label Text="{Binding Path=Event.Name}" FontSize="16" TextColor="#3498db" LineBreakMode="WordWrap" />
+              <Label Text="{Binding Path=Event.StartDateTime}" TextColor="#bdc3c7" />
+            </StackLayout>
+          </Grid>
+        </RelativeLayout>
+      </ViewCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+  </ListView>
+</ContentPage>

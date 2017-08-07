@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MonkeyCode.Apps.Urvent.Portable.Views.MasterView" Title="{Binding Path=Title}">
+  <StackLayout>
+    <Button Text="My Events" Command="{Binding Path=MyEventsCommand}" VerticalOptions="Start"></Button>
+    <Button Text="Search Events" Command="{Binding Path=SearchEventsCommand}" VerticalOptions="Start"></Button>
+    <Button Text="Settings" Command="{Binding Path=SettingsCommand}" VerticalOptions="Start"></Button>
+  </StackLayout>
+</ContentPage>
